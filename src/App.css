@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile View Styles */
+.mobile-view {
+  max-width: 412px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+@media (max-width: 412px) {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .App {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,110 @@
+.homecar-mobile-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.homecar-mobile-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.homecar-mobile-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.homecar-mobile-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.homecar-mobile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  z-index: 2;
+}
+
+.homecar-mobile-content {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  z-index: 3;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.homecar-mobile-slide.active .homecar-mobile-content {
+  opacity: 1;
+}
+
+.homecar-mobile-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.homecar-mobile-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+
+.homecar-mobile-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ff6b6b, #ff5252);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.homecar-mobile-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.homecar-mobile-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+
+.homecar-mobile-dot.active {
+  background-color: #ff6b6b;
+  transform: scale(1.2);
+}

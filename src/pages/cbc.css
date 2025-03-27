@@ -1,0 +1,241 @@
+.cbc-container {
+  padding: 30px 0;
+  background-color: #fff;
+}
+
+.cbc-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  gap: 30px;
+}
+
+.cbc-sidebar {
+  border-right: 1px solid #e0e0e0;
+  padding-right: 20px;
+}
+
+.cbc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cbc-nav-item {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.cbc-nav-item:hover,
+.cbc-nav-item.active {
+  background-color: #f8f9fa;
+  color: #ff6b6b;
+}
+
+.cbc-main {
+  min-height: 600px;
+}
+
+.cbc-header {
+  margin-bottom: 30px;
+}
+
+.cbc-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.cbc-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cbc-price-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cbc-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.cbc-original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 16px;
+}
+
+.cbc-discount {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cbc-section {
+  margin: 30px 0;
+}
+
+.cbc-section-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.cbc-prep-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cbc-prep-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.cbc-prep-item svg {
+  color: #ff6b6b;
+  margin-top: 4px;
+}
+
+.cbc-right-panel {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.cbc-lab-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.cbc-lab-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.cbc-lab-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.cbc-lab-link {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cbc-book-btn {
+  width: 100%;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cbc-book-btn:hover {
+  background-color: #ff5252;
+}
+
+.cbc-related {
+  margin-top: 30px;
+}
+
+.cbc-related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cbc-related-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cbc-related-item:hover {
+  border-color: #ff6b6b;
+  background-color: #fff0f0;
+}
+
+.cbc-related-info {
+  flex: 1;
+}
+
+.cbc-related-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.cbc-related-desc {
+  font-size: 12px;
+  color: #666;
+}
+
+.cbc-understanding {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cbc-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.cbc-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cbc-list-item::before {
+  content: "•";
+  color: #ff6b6b;
+  font-weight: bold;
+  margin-right: 8px;
+}

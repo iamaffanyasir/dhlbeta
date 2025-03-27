@@ -1,0 +1,10 @@
+.image-loading {
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.image-loaded {
+  opacity: 1;
+  filter: blur(0);
+  transition: filter 0.3s ease-in-out;
+}

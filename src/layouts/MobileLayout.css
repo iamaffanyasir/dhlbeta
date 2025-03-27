@@ -1,0 +1,34 @@
+.mobile-layout {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+  position: relative;
+  padding-top: 60px; /* Height of the mobile header */
+  padding-bottom: 70px; /* Height of the mobile navbar */
+}
+
+.mobile-layout__content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide desktop navbar in mobile view */
+@media (max-width: 768px) {
+  .App > nav:first-child {
+    display: none !important;
+  }
+  
+  .App > footer {
+    display: none !important;
+  }
+}
+
+/* Ensure proper spacing for mobile pages */
+.mobile-tests,
+.mobile-test {
+  min-height: calc(100vh - 130px); /* Viewport height minus header and navbar */
+  padding-bottom: env(safe-area-inset-bottom); /* For devices with bottom safe area (e.g. iPhone X) */
+}

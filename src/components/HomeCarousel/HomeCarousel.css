@@ -1,0 +1,386 @@
+.homecar-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+.homecar-loading,
+.homecar-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
+  background: #f8fafc;
+  color: #4a5568;
+  font-size: 18px;
+}
+
+.homecar-error {
+  color: #e53e3e;
+}
+
+.homecar-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.homecar-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.homecar-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.homecar-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  text-align: left;
+  color: white;
+  z-index: 3;
+  width: 50%;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.homecar-slide.active .homecar-content {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.homecar-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.homecar-slide.active .homecar-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.homecar-description {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.homecar-slide.active .homecar-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.homecar-button {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ff6b6b, #ff5252);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.6s;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.homecar-slide.active .homecar-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.homecar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.homecar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  z-index: 2;
+}
+
+.homecar-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 10%;
+  transform: translateX(0);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.homecar-dot {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.homecar-dot.active {
+  width: 60px;
+  background-color: #ff6b6b;
+}
+
+.homecar-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.homecar-container:hover .homecar-arrow {
+  opacity: 1;
+}
+
+.homecar-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.homecar-arrow.prev {
+  left: 30px;
+}
+
+.homecar-arrow.next {
+  right: 30px;
+}
+
+.homecar-arrow svg {
+  color: white;
+  font-size: 24px;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+@media (max-width: 1024px) {
+  .homecar-container {
+    height: 500px;
+  }
+
+  .homecar-content {
+    width: 70%;
+  }
+
+  .homecar-title {
+    font-size: 2.8rem;
+  }
+
+  .homecar-description {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .homecar-container {
+    height: 400px;
+    border-radius: 10px;
+  }
+
+  .homecar-content {
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .homecar-title {
+    font-size: 2.2rem;
+  }
+
+  .homecar-description {
+    font-size: 1.1rem;
+  }
+
+  .homecar-nav {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .homecar-arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .homecar-arrow.prev {
+    left: 15px;
+  }
+
+  .homecar-arrow.next {
+    right: 15px;
+  }
+}
+
+/* Mobile and Tablet styles */
+@media screen and (max-device-width: 820px), 
+       screen and (max-width: 820px) {
+  .homecar-container {
+    height: 300px;
+    border-radius: 10px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .homecar-content {
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 15px;
+  }
+
+  .homecar-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .homecar-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .homecar-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .homecar-nav {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .homecar-dot {
+    width: 30px;
+    height: 3px;
+  }
+
+  .homecar-dot.active {
+    width: 45px;
+  }
+
+  .homecar-arrow {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+  }
+
+  .homecar-arrow.prev {
+    left: 10px;
+  }
+
+  .homecar-arrow.next {
+    right: 10px;
+  }
+
+  .homecar-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Tablet-specific adjustments for better scaling */
+@media screen and (min-width: 415px) and (max-width: 820px) {
+  .homecar-container {
+    height: 400px;
+  }
+
+  .homecar-title {
+    font-size: 2.2rem;
+  }
+
+  .homecar-description {
+    font-size: 1.2rem;
+  }
+
+  .homecar-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+
+  .homecar-arrow {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Mobile-specific styles */
+@media screen and (max-device-width: 414px), 
+       screen and (max-width: 414px) {
+  .homecar-container {
+    height: 300px;
+  }
+}
+
+/* Smaller devices adjustments */
+@media screen and (max-device-width: 360px),
+       screen and (max-width: 360px) {
+  .homecar-container {
+    height: 250px;
+  }
+
+  .homecar-title {
+    font-size: 1.5rem;
+  }
+
+  .homecar-description {
+    font-size: 0.9rem;
+  }
+
+  .homecar-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}

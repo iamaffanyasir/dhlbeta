@@ -1,0 +1,166 @@
+.ad-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.ad-sidebar {
+  width: 280px;
+  background: linear-gradient(135deg, #0066b2, #003f6c);
+  color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+}
+
+.ad-sidebar-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ad-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.ad-sidebar-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.ad-user-info {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.ad-user-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.ad-login-time {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.ad-logout-button {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.ad-logout-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ad-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: 40px;
+}
+
+.ad-header {
+  margin-bottom: 40px;
+}
+
+.ad-header h1 {
+  margin: 0;
+  color: #1a202c;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.ad-header p {
+  margin: 8px 0 0;
+  color: #718096;
+  font-size: 16px;
+}
+
+.ad-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.ad-option-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.ad-option-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #0066b2;
+}
+
+.ad-option-icon {
+  font-size: 48px;
+  color: #0066b2;
+  margin-bottom: 16px;
+}
+
+.ad-option-card h3 {
+  margin: 0 0 8px;
+  color: #1a202c;
+  font-size: 20px;
+}
+
+.ad-option-card p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ad-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 16px;
+  }
+
+  .ad-main {
+    margin-left: 0;
+    padding: 24px;
+  }
+
+  .ad-container {
+    flex-direction: column;
+  }
+
+  .ad-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-logo {
+    width: 100px;
+  }
+
+  .ad-sidebar-header h2 {
+    font-size: 20px;
+  }
+}
