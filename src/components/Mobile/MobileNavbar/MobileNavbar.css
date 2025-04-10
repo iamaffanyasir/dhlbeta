@@ -25,20 +25,20 @@
   color: #94a3b8;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 25%;
+  width: 20%;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
 
 .mobnav-icon {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 4px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobnav-label {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   transition: all 0.3s ease;
   opacity: 0.8;
@@ -46,7 +46,7 @@
 }
 
 .mobnav-active {
-  color: #ff6b6b;
+  color: #003f6c;
 }
 
 .mobnav-active::after {
@@ -57,7 +57,7 @@
   transform: translateX(-50%);
   width: 5px;
   height: 5px;
-  background-color: #ff6b6b;
+  background-color: #0066b2;
   border-radius: 50%;
   transition: all 0.3s ease;
 }

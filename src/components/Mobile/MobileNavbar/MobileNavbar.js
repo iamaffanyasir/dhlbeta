@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FaHome, FaFlask, FaUserAlt, FaShoppingBag } from 'react-icons/fa';
+import { FaHome, FaFlask, FaInfoCircle, FaShoppingBag, FaFileAlt } from 'react-icons/fa';
 import './MobileNavbar.css';
 
 const MobileNavbar = () => {
@@ -25,13 +25,14 @@ const MobileNavbar = () => {
       icon: <FaShoppingBag className="mobnav-icon" />,
       label: 'Packages',
       path: '/packages'
-    },
-    {
-      id: 4,
-      icon: <FaUserAlt className="mobnav-icon" />,
-      label: 'Profile',
-      path: '/profile'
     }
+    // },
+    // {
+    //   id: 4,
+    //   icon: <FaFileAlt className="mobnav-icon" />,
+    //   label: 'Profile',
+    //   path: '/profile'
+    // }
   ];
 
   return (

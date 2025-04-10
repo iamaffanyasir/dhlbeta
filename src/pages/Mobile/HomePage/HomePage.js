@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaWhatsapp, FaList, FaArrowRight, FaStar } from 'react-icons/fa';
 import MobileSearch from '../../../components/Mobile/MobileSearch/MobileSearch';
+import MobileCarousel from '../../../components/Mobile/MobileCarousel/MobileCarousel';
 import offer1 from '../../../assets/mobile/images/offer-1.png';
 import offer2 from '../../../assets/mobile/images/offer-2.png';
 import categoryWomen from '../../../assets/mobile/images/category-women.jpg';
@@ -11,6 +12,34 @@ import categoryHealth from '../../../assets/mobile/images/category-health.jpg';
 import categorySenior from '../../../assets/mobile/images/category-senior.jpg';
 import categoryCovid from '../../../assets/mobile/images/category-covid.jpg';
 import './HomePage.css';
+
+const carouselSlides = [
+  {
+    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80',
+    title: 'Special Health Package',
+    description: 'Complete health check with 45+ tests at ₹1499 only'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80',
+    title: 'Free Home Collection',
+    description: 'Book any test and get free sample collection at your doorstep'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581093458791-9d15cc9c09d9?auto=format&fit=crop&q=80',
+    title: 'Senior Citizen Benefits',
+    description: 'Extra 20% off for senior citizens on all lab tests'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80',
+    title: 'Family Health Card',
+    description: 'Get exclusive discounts and priority service for your family'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1624727828489-a1e03b79bba8?auto=format&fit=crop&q=80',
+    title: 'NABL Accredited Labs',
+    description: 'Accurate results from certified diagnostic centers'
+  }
+];
 
 const popularTests = [
   {
@@ -153,7 +182,6 @@ const MobileHomePage = () => {
       <div className="mobhome-search">
         <MobileSearch />
       </div>
-
       {/* Quick Actions */}
       <div className="mobhome-actions">
         <button className="mobhome-action-btn mobhome-call">
@@ -186,24 +214,13 @@ const MobileHomePage = () => {
           <strong>WhatsApp</strong>
         </button>
       </div>
+      
+      <div className="mobile-home__content">
+        <MobileCarousel slides={carouselSlides} />
+      </div>
 
       {/* Offer Images Grid */}
-      <div className="mobhome-offers">
-        <div className="mobhome-offer-card">
-          <img 
-            src={offer1} 
-            alt="Special Offer 1" 
-            className="mobhome-offer-image"
-          />
-        </div>
-        <div className="mobhome-offer-card">
-          <img 
-            src={offer2} 
-            alt="Special Offer 2" 
-            className="mobhome-offer-image"
-          />
-        </div>
-      </div>
+      
 
       {/* Categories Section */}
       <div className="mobhome-categories-section">

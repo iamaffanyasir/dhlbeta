@@ -30,7 +30,7 @@
 .test-sidebar-item:hover,
 .test-sidebar-item.active {
   background-color: #f8f9fa;
-  color: #ff6b6b;
+  color: #0066b2;
 }
 
 .test-main {
@@ -109,7 +109,7 @@
 }
 
 .test-preparation-item svg {
-  color: #ff6b6b;
+  color: #0066b2;
   margin-top: 4px;
 }
 
@@ -142,14 +142,14 @@
 }
 
 .test-lab-link {
-  color: #ff6b6b;
+  color: #0066b2;
   text-decoration: none;
   font-size: 14px;
 }
 
 .test-book-button {
   width: 100%;
-  background-color: #ff6b6b;
+  background-color: #0066b2;
   color: white;
   border: none;
   border-radius: 4px;
@@ -161,7 +161,7 @@
 }
 
 .test-book-button:hover {
-  background-color: #ff5252;
+  background-color: #003f6c;
 }
 
 .test-related {
@@ -186,7 +186,7 @@
 }
 
 .test-related-item:hover {
-  border-color: #ff6b6b;
+  border-color: #0066b2;
   background-color: #fff0f0;
 }
 

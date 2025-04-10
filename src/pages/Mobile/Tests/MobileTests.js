@@ -7,12 +7,12 @@ import MobileSearch from '../../../components/Mobile/MobileSearch/MobileSearch';
 
 const categories = [
   'All Tests',
+  'Organ Function',
   'Blood Tests',
   'Urine Tests',
   'Hormone Tests',
-  'Cancer Markers',
-  'Diabetes',
-  'Heart Health'
+  'Cardiac Risk',
+  'Diabetes'
 ];
 
 const MobileTests = () => {

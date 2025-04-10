@@ -1,147 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaWhatsapp, FaPhone, FaShoppingCart, FaClock, FaFlask, FaUserMd } from 'react-icons/fa';
+import { 
+  FaArrowLeft, 
+  FaWhatsapp, 
+  FaPhone, 
+  FaClock, 
+  FaFlask, 
+  FaUserMd,
+  FaCheckCircle,
+  FaChevronDown,
+  FaChevronUp,
+  FaInfoCircle
+} from 'react-icons/fa';
+import { tests } from '../../../data/tests';
 import './TestDetails.css';
-
-// Mock data - In real app, fetch this from API
-const testsData = {
-  cbc: {
-    id: 'cbc',
-    name: 'Complete Blood Count',
-    description: 'A complete blood count (CBC) is a blood test used to evaluate your overall health and screen for various disorders affecting blood cells.',
-    longDescription: `A complete blood count (CBC) is one of the most commonly performed blood tests. It reveals important information about the types and numbers of cells in your blood, particularly red blood cells, white blood cells and platelets. This information is helpful to diagnose various conditions:
-
-    • Anemia
-    • Infection
-    • Blood cancers
-    • Other disorders`,
-    price: 299,
-    discountedPrice: 599,
-    image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&q=80',
-    preparationSteps: [
-      'Fast for 8-12 hours before the test',
-      'Drink plenty of water',
-      'Avoid smoking and alcohol for 24 hours',
-      'Inform about any medications you are taking'
-    ],
-    reportTime: '24 hours',
-    sampleType: 'Blood',
-    testingMethod: 'Automated Hematology Analyzer'
-  },
-  thyroid: {
-    id: 'thyroid',
-    name: 'Thyroid Profile',
-    description: 'A comprehensive thyroid function test that measures various hormones to assess thyroid health.',
-    longDescription: `The thyroid profile test measures the levels of thyroid hormones in your blood. This test helps evaluate the function of your thyroid gland and diagnose various thyroid disorders:
-
-    • Hypothyroidism
-    • Hyperthyroidism
-    • Thyroid nodules
-    • Goiter`,
-    price: 399,
-    discountedPrice: 799,
-    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80',
-    preparationSteps: [
-      'Fast for 8-10 hours before the test',
-      'Take the test early in the morning',
-      'Continue medications unless advised otherwise',
-      'Inform about any thyroid supplements'
-    ],
-    reportTime: '24 hours',
-    sampleType: 'Blood',
-    testingMethod: 'ELISA/CLIA'
-  },
-  diabetes: {
-    id: 'diabetes',
-    name: 'Diabetes Screening',
-    description: 'A comprehensive test to check blood sugar levels and assess diabetes risk.',
-    longDescription: `The diabetes screening test includes both fasting blood glucose and HbA1c measurements. This combination provides a complete picture of your blood sugar control:
-
-    • Current blood sugar levels
-    • Average blood sugar over past 3 months
-    • Risk assessment for diabetes
-    • Early detection of pre-diabetes`,
-    price: 349,
-    discountedPrice: 699,
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80',
-    preparationSteps: [
-      'Fast for 12 hours before the test',
-      'Only water is allowed during fasting',
-      'Avoid strenuous exercise 24 hours before',
-      'Continue regular medications unless advised otherwise'
-    ],
-    reportTime: '24 hours',
-    sampleType: 'Blood',
-    testingMethod: 'Glucose Oxidase/HPLC'
-  },
-  'vitamin-d': {
-    id: 'vitamin-d',
-    name: 'Vitamin D Test',
-    description: 'Measures the level of Vitamin D in your blood to assess deficiency or excess.',
-    longDescription: `The Vitamin D test measures the level of 25-hydroxy Vitamin D in your blood. This test is important because:
-
-    • Vitamin D is crucial for bone health
-    • It affects immune system function
-    • Deficiency is common but often undiagnosed
-    • Helps prevent osteoporosis`,
-    price: 599,
-    discountedPrice: 1199,
-    image: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80',
-    preparationSteps: [
-      'No special preparation needed',
-      'Inform about any supplements',
-      'Continue regular medications',
-      'No fasting required'
-    ],
-    reportTime: '24-48 hours',
-    sampleType: 'Blood',
-    testingMethod: 'LCMS/HPLC'
-  },
-  lipid: {
-    id: 'lipid',
-    name: 'Lipid Profile',
-    description: 'Measures different types of fats in your blood to assess heart health.',
-    longDescription: `A lipid profile is a complete cholesterol test that measures the amount of "good" and "bad" cholesterol and triglycerides in your blood. This test helps:
-
-    • Assess cardiovascular health
-    • Determine heart disease risk
-    • Monitor cholesterol-lowering treatments
-    • Guide lifestyle modifications`,
-    price: 399,
-    discountedPrice: 799,
-    image: 'https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&q=80',
-    preparationSteps: [
-      'Fast for 9-12 hours before the test',
-      'Only water is allowed during fasting',
-      'Avoid fatty foods 24 hours before',
-      'Continue regular medications unless advised otherwise'
-    ],
-    reportTime: '24 hours',
-    sampleType: 'Blood',
-    testingMethod: 'Spectrophotometry'
-  }
-};
 
 const TestDetails = () => {
   const { testId } = useParams();
   const navigate = useNavigate();
+  const [activeFaq, setActiveFaq] = useState(null);
 
-  // Get test data based on testId
-  const testData = testsData[testId];
+  const test = tests.find(t => t.id === testId);
 
-  // If test not found, redirect to home
-  if (!testData) {
-    navigate('/');
-    return null;
+  if (!test) {
+    return <div className="mobile-test__not-found">Test not found</div>;
   }
 
-  const handleBack = () => {
-    navigate(-1);
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
   };
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '919664064439';
-    const message = `Hello, I would like to book the ${testData.name} test.`;
+    const message = `Hello, I would like to book the ${test.name} test.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -152,96 +43,135 @@ const TestDetails = () => {
 
   const handleBookNow = () => {
     // Add to cart or proceed to booking
-    console.log('Booking test:', testData.name);
+    console.log('Booking test:', test.name);
   };
 
   return (
-    <div className="mobtest">
-      <div className="mobtest__header">
-        <button className="mobtest__back" onClick={handleBack}>
+    <div className="mobile-test">
+      <div className="mobile-test__header">
+        <button className="mobile-test__back" onClick={() => navigate(-1)}>
           <FaArrowLeft />
+          <span>Back</span>
         </button>
-        <h1 className="mobtest__title">Test Details</h1>
+        <h1 className="mobile-test__title">{test.name}</h1>
       </div>
 
-      <div className="mobtest__image">
-        <img src={testData.image} alt={testData.name} />
-      </div>
-
-      <div className="mobtest__content">
-        <h2 className="mobtest__name">{testData.name}</h2>
-        
-        <div className="mobtest__price">
-          <span className="mobtest__price-discounted">₹{testData.price}</span>
-          <span className="mobtest__price-original">₹{testData.discountedPrice}</span>
-          <span className="mobtest__discount">
-            {Math.round(((testData.discountedPrice - testData.price) / testData.discountedPrice) * 100)}% OFF
-          </span>
-        </div>
-
-        <div className="mobtest__info-grid">
-          <div className="mobtest__info-item">
-            <FaClock className="mobtest__info-icon" />
-            <div className="mobtest__info-text">
-              <span className="mobtest__info-label">Report Time</span>
-              <span className="mobtest__info-value">{testData.reportTime}</span>
-            </div>
+      <div className="mobile-test__content">
+        <div className="mobile-test__meta">
+          <div className="mobile-test__meta-item">
+            <FaClock />
+            <span>{test.reportTime || 'Same Day Report'}</span>
           </div>
-          <div className="mobtest__info-item">
-            <FaFlask className="mobtest__info-icon" />
-            <div className="mobtest__info-text">
-              <span className="mobtest__info-label">Sample Type</span>
-              <span className="mobtest__info-value">{testData.sampleType}</span>
-            </div>
+          <div className="mobile-test__meta-item">
+            <FaFlask />
+            <span>{test.sampleType || 'Blood Sample'}</span>
           </div>
-          <div className="mobtest__info-item">
-            <FaUserMd className="mobtest__info-icon" />
-            <div className="mobtest__info-text">
-              <span className="mobtest__info-label">Method</span>
-              <span className="mobtest__info-value">{testData.testingMethod}</span>
-            </div>
+          <div className="mobile-test__meta-item">
+            <FaUserMd />
+            <span>{test.testingMethod || 'Pathology'}</span>
           </div>
         </div>
 
-        <div className="mobtest__section">
-          <h3 className="mobtest__section-title">About the Test</h3>
-          <p className="mobtest__description">{testData.longDescription}</p>
+        <div className="mobile-test__section">
+          <h2 className="mobile-test__section-title">
+            <FaInfoCircle />
+            <span>About the Test</span>
+          </h2>
+          <p className="mobile-test__description">{test.description}</p>
+          
+          {test.preparationSteps && test.preparationSteps.length > 0 && (
+            <div className="mobile-test__parameters">
+              <h3>Test Preparation</h3>
+              <ul className="mobile-test__list">
+                {test.preparationSteps.map((step, index) => (
+                  <li key={index} className="mobile-test__list-item">
+                    <FaCheckCircle />
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
-        <div className="mobtest__section">
-          <h3 className="mobtest__section-title">Pre-Test Preparations</h3>
-          <ul className="mobtest__prep-list">
-            {testData.preparationSteps.map((step, index) => (
-              <li key={index} className="mobtest__prep-item">{step}</li>
-            ))}
-          </ul>
-        </div>
+        {test.benefits && test.benefits.length > 0 && (
+          <div className="mobile-test__section">
+            <h2 className="mobile-test__section-title">
+              <FaUserMd />
+              <span>Why Take This Test?</span>
+            </h2>
+            <ul className="mobile-test__list">
+              {test.benefits.map((benefit, index) => (
+                <li key={index} className="mobile-test__list-item">
+                  <FaCheckCircle />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {test.faqs && test.faqs.length > 0 && (
+          <div className="mobile-test__section">
+            <h2 className="mobile-test__section-title">
+              <FaInfoCircle />
+              <span>Frequently Asked Questions</span>
+            </h2>
+            <div className="mobile-test__faq">
+              {test.faqs.map((faq, index) => (
+                <div key={index} className="mobile-test__faq-item">
+                  <button 
+                    className="mobile-test__faq-question"
+                    onClick={() => toggleFaq(index)}
+                    type="button"
+                  >
+                    <span>{faq.question}</span>
+                    {activeFaq === index ? <FaChevronUp /> : <FaChevronDown />}
+                  </button>
+                  {activeFaq === index && (
+                    <div className="mobile-test__faq-answer">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
-      <div className="mobtest__actions">
-        <div className="mobtest__contact">
+      <div className="mobile-test__footer">
+        <div className="mobile-test__price">
+          <span className="mobile-test__price-current">₹{test.price}</span>
+          {test.originalPrice && (
+            <span className="mobile-test__price-original">₹{test.originalPrice}</span>
+          )}
+        </div>
+        <div className="mobile-test__actions">
           <button 
-            className="mobtest__action-btn mobtest__action-btn--whatsapp"
+            className="mobile-test__action mobile-test__action--whatsapp"
+            type="button"
             onClick={handleWhatsAppClick}
           >
             <FaWhatsapp />
-            WhatsApp
+            <span>Chat</span>
           </button>
           <button 
-            className="mobtest__action-btn mobtest__action-btn--call"
+            className="mobile-test__action mobile-test__action--call"
+            type="button"
             onClick={handleCallClick}
           >
             <FaPhone />
-            Call
+            <span>Call</span>
+          </button>
+          <button 
+            className="mobile-test__action mobile-test__action--book"
+            type="button"
+            onClick={handleBookNow}
+          >
+            <span>Book Now</span>
           </button>
         </div>
-        <button 
-          className="mobtest__book-btn"
-          onClick={handleBookNow}
-        >
-          <FaShoppingCart />
-          Book Now
-        </button>
       </div>
     </div>
   );

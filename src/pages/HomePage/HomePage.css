@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ff6b6b, #ff5252);
+  background: linear-gradient(135deg, #0066b2, #003f6c);
   border-radius: 10px;
   color: white;
   font-size: 18px;
@@ -87,7 +87,7 @@
   display: inline-block;
   padding: 2px 8px;
   background: rgba(255, 107, 107, 0.1);
-  color: #ff6b6b;
+  color: #0066b2;
   border-radius: 4px;
   font-size: 11px;
   font-weight: 500;
@@ -99,7 +99,7 @@
   justify-content: center;
   margin-top: 20px;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #ff6b6b, #ff5252);
+  background: linear-gradient(135deg, #0066b2, #003f6c);
   color: white;
   text-decoration: none;
   border-radius: 12px;

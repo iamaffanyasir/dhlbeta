@@ -1,5 +1,7 @@
 .mobile-tests {
   padding: 20px 15px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .mobile-tests__header {
@@ -11,17 +13,21 @@
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .mobile-tests__subtitle {
   font-size: 14px;
   color: #64748b;
+  text-align: left;
 }
 
 .mobile-tests__grid {
   display: grid;
   gap: 16px;
   margin-bottom: 32px;
+  padding: 0 2px;
+  width: 100%;
 }
 
 .mobile-tests__card {
@@ -52,7 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e31837;
+  color: #003f6c;
 }
 
 .mobile-tests__card-title {
@@ -60,16 +66,21 @@
   font-weight: 500;
   color: #2c3e50;
   margin-bottom: 4px;
+  text-align: left;
 }
 
 .mobile-tests__card-price {
   font-size: 14px;
-  color: #e31837;
+  color: #003f6c;
   font-weight: 500;
 }
 
 .mobile-tests__card-content {
   margin-bottom: 16px;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .mobile-tests__card-description {
@@ -77,6 +88,7 @@
   color: #64748b;
   line-height: 1.5;
   margin-bottom: 12px;
+  text-align: left;
 }
 
 .mobile-tests__card-meta {
@@ -95,6 +107,7 @@
 .mobile-tests__card-actions {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .mobile-tests__card-button {
@@ -103,13 +116,15 @@
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
-  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-tests__card-button--primary {
-  background: #e31837;
+  background: #003f6c;
   color: white;
   border: none;
 }
@@ -130,10 +145,16 @@
 }
 
 .mobile-tests__categories {
-  margin-bottom: 24px;
+  margin: 0 -15px 24px -15px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-tests__categories::-webkit-scrollbar {
+  display: none;
 }
 
 .mobile-tests__categories-list {
@@ -154,7 +175,7 @@
 }
 
 .mobile-tests__category--active {
-  background: #e31837;
+  background: #003f6c;
   color: white;
-  border-color: #e31837;
+  border-color: #003f6c;
 }

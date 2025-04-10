@@ -31,7 +31,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #ff6b6b;
+  background-color: #0066b2;
   border-radius: 2px;
 }
 
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ff6b6b;
+  color: #0066b2;
   background: none;
   border: none;
   font-size: 16px;
@@ -104,7 +104,7 @@
 }
 
 .ht-test-card:hover .ht-test-content {
-  border-color: #ff6b6b;
+  border-color: #0066b2;
   box-shadow: 0 8px 24px rgba(255, 107, 107, 0.12);
 }
 
@@ -125,7 +125,7 @@
 
 .ht-book-button {
   width: 100%;
-  background-color: #ff6b6b;
+  background-color: #0066b2;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -137,7 +137,7 @@
 }
 
 .ht-book-button:hover {
-  background-color: #ff5252;
+  background-color: #003f6c;
   transform: translateY(-2px);
 }
 
@@ -162,9 +162,9 @@
 }
 
 .ht-slider-arrow:hover {
-  background: #ff6b6b;
+  background: #0066b2;
   color: white;
-  border-color: #ff6b6b;
+  border-color: #0066b2;
 }
 
 .ht-slider-prev {
@@ -187,7 +187,7 @@
 }
 
 .slick-dots li.slick-active button:before {
-  color: #ff6b6b;
+  color: #0066b2;
 }
 
 /* Responsive Design */

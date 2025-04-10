@@ -55,9 +55,9 @@
 }
 
 .ft-social-link:hover {
-  background: #ff6b6b;
+  background: #0066b2;
   color: white;
-  border-color: #ff6b6b;
+  border-color: #0066b2;
   transform: translateY(-2px);
 }
 
@@ -82,7 +82,7 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: #ff6b6b;
+  background-color: #0066b2;
   border-radius: 2px;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .ft-link:hover {
-  color: #ff6b6b;
+  color: #0066b2;
   transform: translateX(4px);
 }
 
@@ -133,7 +133,7 @@
 }
 
 .ft-contact-item svg {
-  color: #ff6b6b;
+  color: #0066b2;
   font-size: 16px;
   margin-top: 3px;
   flex-shrink: 0;
@@ -169,7 +169,7 @@
 }
 
 .ft-bottom-link:hover {
-  color: #ff6b6b;
+  color: #0066b2;
 }
 
 @media (max-width: 1024px) {

@@ -23,7 +23,7 @@
 
 .mobile-search__input:focus {
   outline: none;
-  border-color: #e31837;
+  border-color: #003f6c;
   box-shadow: 0 0 0 3px rgba(227, 24, 55, 0.1);
 }
 
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e31837;
+  color: #003f6c;
 }
 
 .mobile-search__result-content {
@@ -104,7 +104,7 @@
 
 .mobile-search__result-price {
   font-size: 14px;
-  color: #e31837;
+  color: #003f6c;
   font-weight: 500;
 }
 

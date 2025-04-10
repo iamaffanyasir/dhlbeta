@@ -71,7 +71,7 @@
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 600;
-  background: linear-gradient(45deg, #ff6b6b, #ff5252);
+  background: linear-gradient(45deg, #0066b2, #003f6c);
   color: white;
   border: none;
   border-radius: 25px;
@@ -105,6 +105,6 @@
 }
 
 .homecar-mobile-dot.active {
-  background-color: #ff6b6b;
+  background-color: #0066b2;
   transform: scale(1.2);
 }

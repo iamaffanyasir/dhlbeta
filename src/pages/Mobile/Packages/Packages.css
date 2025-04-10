@@ -1,0 +1,168 @@
+.packages {
+  padding: 20px 16px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.packages__intro {
+  margin-bottom: 32px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.packages__intro-text {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.packages__intro-text:last-child {
+  margin-bottom: 0;
+}
+
+.packages__header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.packages__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #003f6c;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.packages__subtitle {
+  font-size: 16px;
+  color: #64748b;
+}
+
+.packages__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.packages__card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.packages__card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(227, 24, 55, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #003f6c;
+  margin: 16px;
+}
+
+.packages__card-content {
+  padding: 0 16px 16px;
+}
+
+.packages__card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.packages__card-description {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.packages__card-tests {
+  margin-bottom: 16px;
+}
+
+.packages__card-tests-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.packages__card-tests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.packages__card-tests-item {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.packages__card-tests-item:before {
+  content: "•";
+  color: #003f6c;
+  margin-right: 8px;
+}
+
+.packages__card-price {
+  font-size: 28px;
+  font-weight: 600;
+  color: #003f6c;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.packages__card-original-price {
+  font-size: 18px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.packages__card-price-discount {
+  font-size: 14px;
+  font-weight: 500;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.packages__card-button {
+  width: 100%;
+  padding: 12px;
+  background: #003f6c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.packages__card-button:active {
+  background: #c41530;
+}
